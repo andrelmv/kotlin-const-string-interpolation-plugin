@@ -9,9 +9,9 @@
 
 IntelliJ plugin that provides inlay hints for the values of constants string interpolation
 
-<img src="https://github.com/andrelmv/andrelmv.github.io/assets/23142836/81466fac-f840-4d46-8ecb-1c9704ff72b2" alt="kotlin-const-string-interpolation-plugin animation">
-
 <!-- Plugin description end -->
+
+<img src="https://github.com/andrelmv/andrelmv.github.io/assets/23142836/81466fac-f840-4d46-8ecb-1c9704ff72b2" alt="kotlin-const-string-interpolation-plugin animation">
 
 ## Installation
 
