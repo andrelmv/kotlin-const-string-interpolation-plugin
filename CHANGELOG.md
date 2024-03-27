@@ -11,3 +11,4 @@
 - Inlay Hint Provider
 - Plugin configuration
 - Unit tests
+- CODEOWNERS file
