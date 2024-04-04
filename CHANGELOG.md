@@ -4,7 +4,10 @@
 
 ## [Unreleased]
 
+## [1.0.1] - 2024-04-04
+
 ### Changed
+
 - Update Supported build number to 241.* 
 - Update gradle to 8.6
 
@@ -19,5 +22,6 @@
 - Unit tests
 - CODEOWNERS file
 
-[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/commits/v1.0.0
