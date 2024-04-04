@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Changed
+- Update Supported build number to 241.* 
+- Update gradle to 8.6
+
 ## [1.0.0] - 2024-03-31
 
 ### Added
