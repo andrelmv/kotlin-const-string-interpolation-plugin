@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- Support to provide inlay hints for string constants
+- Support to enable/disable inlay hints for string and string template
+
 ## [1.0.1] - 2024-04-04
 
 ### Changed
