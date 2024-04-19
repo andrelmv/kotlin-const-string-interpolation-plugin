@@ -20,6 +20,7 @@ IntelliJ plugin that provides inlay hints for the values of constants string int
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "kotlin-const-string-interpolation-plugin"</kbd> >
   <kbd>Install</kbd>
   
+  
 - Manually:
 
   Download the [latest release](https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/releases/latest) and install it manually using
