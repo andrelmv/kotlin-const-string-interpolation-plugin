@@ -1,52 +1,60 @@
 package io.github.andrelmv.plugin.inlay
 
-import com.intellij.codeInsight.hints.ChangeListener
 import com.intellij.codeInsight.hints.ImmediateConfigurable
 import com.intellij.codeInsight.hints.InlayHintsCollector
 import com.intellij.codeInsight.hints.InlayHintsProvider
 import com.intellij.codeInsight.hints.InlayHintsSink
-import com.intellij.codeInsight.hints.NoSettings
 import com.intellij.codeInsight.hints.SettingsKey
 import com.intellij.lang.Language
+import com.intellij.openapi.components.service
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.PsiFile
-import com.intellij.ui.components.JBTextField
 import org.jetbrains.kotlin.idea.KotlinLanguage
-import javax.swing.JComponent
 
 @Suppress("UnstableApiUsage")
-class InlayStringInterpolationProvider : InlayHintsProvider<NoSettings> {
+class InlayStringInterpolationProvider : InlayHintsProvider<InlayStringInterpolationSettings> {
 
-    private val settingsKey: SettingsKey<NoSettings> = SettingsKey(STR_INTERPOLATION_HINT)
+    private val settingsKey: SettingsKey<InlayStringInterpolationSettings> = SettingsKey(STR_INTERPOLATION_HINT)
 
-    override val key: SettingsKey<NoSettings>
+    override val key: SettingsKey<InlayStringInterpolationSettings>
         get() = settingsKey
 
     override val name: String
         get() = STR_INTERPOLATION_HINT
 
     override val previewText: String
-        get() = "const val ONE_STR = \"one\" \n" +
-                "const val TWO_STR = \"\$ONE_STR two\""
+        get() = """
+            const val NAME = "André"
+            const val SURNAME = "Monteiro"
+            const val FULL_NAME = "${'$'}NAME ${'$'}SURNAME"
+
+            data class User(
+                val name: String,
+                val surname: String,
+            )
+
+            val user = User(
+                name = NAME,
+                surname = SURNAME,
+            )
+            """
 
     override fun createConfigurable(
-        settings: NoSettings
-    ): ImmediateConfigurable = object : ImmediateConfigurable {
-        override fun createComponent(listener: ChangeListener): JComponent =
-            JBTextField("Provides inlay hints for constant interpolated strings")
-    }
+        settings: InlayStringInterpolationSettings
+    ): ImmediateConfigurable = InlayStringInterpolationConfig(settings)
 
     override fun isLanguageSupported(
         language: Language
     ): Boolean = language == KotlinLanguage.INSTANCE
 
-    override fun createSettings(): NoSettings = NoSettings()
+    override fun createSettings(): InlayStringInterpolationSettings = service<InlayStringInterpolationSettings>()
+
     override fun getCollectorFor(
         file: PsiFile,
         editor: Editor,
-        settings: NoSettings,
+        settings: InlayStringInterpolationSettings,
         sink: InlayHintsSink
-    ): InlayHintsCollector = InlayStringInterpolationHintCollector(editor)
+    ): InlayHintsCollector = InlayStringInterpolationHintCollector(settings, editor)
 }
 
 private const val STR_INTERPOLATION_HINT = "String Interpolation Hint"
