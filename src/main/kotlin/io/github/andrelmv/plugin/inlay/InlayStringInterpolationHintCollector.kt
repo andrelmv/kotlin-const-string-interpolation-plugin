@@ -7,6 +7,7 @@ import com.intellij.psi.PsiElement
 import org.jetbrains.kotlin.idea.caches.resolve.analyze
 import org.jetbrains.kotlin.idea.intentions.loopToCallChain.isConstant
 import org.jetbrains.kotlin.idea.structuralsearch.visitor.KotlinRecursiveElementVisitor
+import org.jetbrains.kotlin.psi.KtBinaryExpression
 import org.jetbrains.kotlin.psi.KtExpression
 import org.jetbrains.kotlin.psi.KtNameReferenceExpression
 import org.jetbrains.kotlin.psi.KtNamedFunction
@@ -38,7 +39,7 @@ class InlayStringInterpolationHintCollector(
                 ) {
                     val offset = AtomicInteger()
 
-                    if (settings.state.withStringInterpolationHint && element.isStringTemplateConstant()) {
+                    if (settings.state.withStringInterpolationHint && element.isKtStringTemplateExpression()) {
                         (element as KtStringTemplateExpression).getValue()
                             ?.let {
                                 offset.set(element.lastChild.textOffset)
@@ -47,7 +48,7 @@ class InlayStringInterpolationHintCollector(
                                 sink.addInlineElement(offset.get(), true, inlayPresentation, true)
                             }
                         return
-                    } else if (settings.state.withStringConstantHint && element.isStringConstant()) {
+                    } else if (settings.state.withStringConstantHint && element.isKtNameReferenceExpression()) {
                         (element as KtNameReferenceExpression).getValue()
                             ?.let {
                                 offset.set(element.getReferencedNameElement().text.length + element.textOffset)
@@ -63,13 +64,15 @@ class InlayStringInterpolationHintCollector(
     }
 }
 
-private fun PsiElement.isStringConstant(): Boolean {
-    return this is KtReferenceExpression
+private fun PsiElement.isKtNameReferenceExpression(): Boolean {
+    return this is KtNameReferenceExpression
             && ((this.context is KtValueArgument && this.isConstant())
-                    || this.context is KtNamedFunction)
+            || this.context is KtNamedFunction
+            || this.context is KtBinaryExpression)
+
 }
 
-private fun PsiElement.isStringTemplateConstant(): Boolean {
+private fun PsiElement.isKtStringTemplateExpression(): Boolean {
     return this is KtStringTemplateExpression
             && this.isConstant() && this.isPlain().not()
             && this.hasInterpolation()
@@ -78,4 +81,5 @@ private fun PsiElement.isStringTemplateConstant(): Boolean {
 
 private fun KtExpression.getValue() =
     ConstantExpressionEvaluator.getConstant(this, analyze(BodyResolveMode.PARTIAL))
-        ?.let { it.getValue(TypeUtils.DONT_CARE) as String }
+        ?.getValue(TypeUtils.DONT_CARE)
+        ?.toString()
