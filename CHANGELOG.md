@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [1.0.2] - 2024-04-25
+
 ### Added
 
 - Support to provide inlay hints for string constants
@@ -27,6 +29,7 @@
 - Unit tests
 - CODEOWNERS file
 
-[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/commits/v1.0.0
