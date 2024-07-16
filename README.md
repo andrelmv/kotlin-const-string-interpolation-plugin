@@ -4,6 +4,8 @@
 ![Build](https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/24019-kotlin-constant-string-interpolation.svg)](https://plugins.jetbrains.com/plugin/24019-kotlin-constant-string-interpolation)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/24019-kotlin-constant-string-interpolation.svg)](https://plugins.jetbrains.com/plugin/24019-kotlin-constant-string-interpolation)
+[![CodeFactor](https://www.codefactor.io/repository/github/andrelmv/kotlin-const-string-interpolation-plugin/badge)](https://www.codefactor.io/repository/github/andrelmv/kotlin-const-string-interpolation-plugin)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=andrelmv_kotlin-const-string-interpolation-plugin&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=andrelmv_kotlin-const-string-interpolation-plugin)
 
 <!-- Plugin description -->
 

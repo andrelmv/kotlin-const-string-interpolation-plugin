@@ -6,7 +6,10 @@
 
 ### Changed
 - Migrate kover to version 0.8.0
-- Add dependabot auto merge workflow
+
+### Added 
+- Add sonar badge to README.md
+- Add codefactor badge to README.md
 
 ## [1.0.2] - 2024-04-25
 
