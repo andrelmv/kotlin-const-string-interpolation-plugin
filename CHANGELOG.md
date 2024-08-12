@@ -4,12 +4,16 @@
 
 ## [Unreleased]
 
+## [1.0.3] - 2024-08-12
+
 ### Changed
+
 - Migrate kover to version 0.8.0
 - Update pluginUntilBuild to support build 242.*
 - Update Gradle to version 9.0
 
-### Added 
+### Added
+
 - Add sonar badge to README.md
 - Add codefactor badge to README.md
 
@@ -38,7 +42,8 @@
 - Unit tests
 - CODEOWNERS file
 
-[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/commits/v1.0.0
