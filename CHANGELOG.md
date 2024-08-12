@@ -6,6 +6,8 @@
 
 ### Changed
 - Migrate kover to version 0.8.0
+- Update pluginUntilBuild to support build 242.*
+- Update Gradle to version 9.0
 
 ### Added 
 - Add sonar badge to README.md
