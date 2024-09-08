@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+### Added
+- Support to KtCollectionLiteralExpression inlay hint
+
 ## [1.0.3] - 2024-08-12
 
 ### Changed

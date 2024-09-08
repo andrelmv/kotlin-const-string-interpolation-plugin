@@ -8,6 +8,7 @@ import org.jetbrains.kotlin.idea.caches.resolve.analyze
 import org.jetbrains.kotlin.idea.intentions.loopToCallChain.isConstant
 import org.jetbrains.kotlin.idea.structuralsearch.visitor.KotlinRecursiveElementVisitor
 import org.jetbrains.kotlin.psi.KtBinaryExpression
+import org.jetbrains.kotlin.psi.KtCollectionLiteralExpression
 import org.jetbrains.kotlin.psi.KtExpression
 import org.jetbrains.kotlin.psi.KtNameReferenceExpression
 import org.jetbrains.kotlin.psi.KtNamedFunction
@@ -65,10 +66,10 @@ class InlayStringInterpolationHintCollector(
 
 private fun PsiElement.isKtNameReferenceExpression(): Boolean {
     return this is KtNameReferenceExpression
-            && ((this.context is KtValueArgument && this.isConstant())
+            && ((this.context is KtCollectionLiteralExpression && this.isConstant())
+            || (this.context is KtValueArgument && this.isConstant())
             || this.context is KtNamedFunction
             || this.context is KtBinaryExpression)
-
 }
 
 private fun PsiElement.isKtStringTemplateExpression(): Boolean {
