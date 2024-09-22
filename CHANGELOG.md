@@ -4,7 +4,10 @@
 
 ## [Unreleased]
 
+## [1.0.4] - 2024-09-17
+
 ### Added
+
 - Support to KtCollectionLiteralExpression inlay hint
 
 ## [1.0.3] - 2024-08-12
@@ -45,7 +48,8 @@
 - Unit tests
 - CODEOWNERS file
 
-[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.3...HEAD
+[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.4...HEAD
+[1.0.4]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.0...v1.0.1
