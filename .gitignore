@@ -6,3 +6,6 @@ modules
 libraries
 sonarlint
 shelf
+.run
+.DS_Store
+.intellijPlatform

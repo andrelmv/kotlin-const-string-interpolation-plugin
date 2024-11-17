@@ -4,6 +4,16 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Migrate gradle plugin to 2.1.0
+- Replace gradle/gradle-build-action for gradle/actions/setup-gradle
+
+### Added
+
+- Junit 4.13.2 dependency
+- Support to K2 compiler
+
 ## [1.0.4] - 2024-09-17
 
 ### Added
