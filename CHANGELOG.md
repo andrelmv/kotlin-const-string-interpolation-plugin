@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+### Changed
+- Update pluginUntilBuild to 252.*
+
 ## [1.0.5] - 2024-11-18
 
 ### Changed

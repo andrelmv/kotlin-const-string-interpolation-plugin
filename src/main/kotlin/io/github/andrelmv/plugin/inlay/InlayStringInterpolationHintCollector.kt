@@ -2,6 +2,7 @@ package io.github.andrelmv.plugin.inlay
 
 import com.intellij.codeInsight.hints.FactoryInlayHintsCollector
 import com.intellij.codeInsight.hints.InlayHintsSink
+import com.intellij.openapi.application.runReadAction
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.PsiElement
 import com.intellij.util.concurrency.annotations.RequiresReadLock
@@ -34,7 +35,7 @@ class InlayStringInterpolationHintCollector(
                 override fun visitElement(
                     element: PsiElement,
                 ) {
-                    val offset: AtomicInteger = AtomicInteger()
+                    val offset = AtomicInteger()
 
                     if (settings.state.withStringInterpolationHint && element.isKtStringTemplateExpression()) {
                         (element as KtStringTemplateExpression).getValue()
@@ -78,14 +79,18 @@ private fun PsiElement.isKtStringTemplateExpression(): Boolean {
 
 @RequiresReadLock
 private fun KtExpression.isConstant(): Boolean {
-    return org.jetbrains.kotlin.analysis.api.analyze(this) {
-        evaluate() != null
+    return runReadAction {
+        org.jetbrains.kotlin.analysis.api.analyze(this) {
+            evaluate() != null
+        }
     }
 }
 
 @RequiresReadLock
 private fun KtExpression.getValue(): String? {
-    return org.jetbrains.kotlin.analysis.api.analyze(this) {
-        evaluate()?.toString()
+    return runReadAction {
+        org.jetbrains.kotlin.analysis.api.analyze(this) {
+            evaluate()?.toString()
+        }
     }
 }
