@@ -4,7 +4,10 @@
 
 ## [Unreleased]
 
+## [1.0.6] - 2025-04-21
+
 ### Changed
+
 - Update pluginUntilBuild to 252.*
 
 ## [1.0.5] - 2024-11-18
@@ -63,7 +66,8 @@
 - Unit tests
 - CODEOWNERS file
 
-[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.5...HEAD
+[Unreleased]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.6...HEAD
+[1.0.6]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/andrelmv/kotlin-const-string-interpolation-plugin/compare/v1.0.2...v1.0.3
