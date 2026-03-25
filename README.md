@@ -7,6 +7,12 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/andrelmv/kotlin-const-string-interpolation-plugin/badge)](https://www.codefactor.io/repository/github/andrelmv/kotlin-const-string-interpolation-plugin)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=andrelmv_kotlin-const-string-interpolation-plugin&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=andrelmv_kotlin-const-string-interpolation-plugin)
 
+## ⚠️ DEPRECATED — No Longer Maintained ⚠️
+
+> **This is the last release of this plugin.**
+> It is deprecated in favor of [**Kotlin Toolbox**](https://plugins.jetbrains.com/plugin/30324-kotlin-toolbox), which includes this feature and more.
+> **Please migrate to Kotlin Toolbox.**
+
 <!-- Plugin description -->
 
 IntelliJ plugin that provides inlay hints for the values of constants string interpolation
