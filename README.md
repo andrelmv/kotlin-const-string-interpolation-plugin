@@ -15,6 +15,10 @@
 
 <!-- Plugin description -->
 
+⚠️ DEPRECATED — No Longer Maintained ⚠️
+
+It is deprecated in favor of [**Kotlin Toolbox**](https://plugins.jetbrains.com/plugin/30324-kotlin-toolbox), which includes this feature and more. Please migrate to Kotlin Toolbox.
+
 IntelliJ plugin that provides inlay hints for the values of constants string interpolation
 
 <!-- Plugin description end -->
