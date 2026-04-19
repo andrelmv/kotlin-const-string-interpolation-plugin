@@ -2,24 +2,4 @@
 # https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
-updates:
-  # Maintain dependencies for Gradle dependencies
-  - package-ecosystem: "gradle"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    groups:
-      dependencies:
-        applies-to: version-updates
-        patterns:
-          - "*"
-  # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    groups:
-      dependencies:
-        applies-to: version-updates
-        patterns:
-          - "*"
+updates: []
